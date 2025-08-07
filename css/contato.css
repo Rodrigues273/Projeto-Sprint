@@ -1,79 +1,106 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
+.contatoPagina {
+    display: flex;
+    max-width: 900px;
+    margin: 30px auto;
+    gap: 40px;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.contato-imagem{
+    flex: 1;
+    min-width: 0;
+}
+
+.contato-imagem img {
+    width: 100%;
+    height: auto;
+}
+
+.formularioContainer{
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.formulario{
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    gap: 5px;
 }
 
-main {
-    flex-grow: 1;
-    padding: 10px 10px;
-    text-align: center;
+.formulario h3{
+    color: #000;
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 1.3rem;
 }
 
-header {
+.inputGrupo {
+    position: relative;
+}
+
+.inputGrupo input,
+.inputGrupo select,
+.inputGrupo textarea{
+    width: 100%;
+    padding: 7px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+.inputGrupo input:focus,
+.inputGrupo select:focus,
+.inputGrupo textarea:focus{
+    border-color: #00274C;
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 0 2px rgb(0, 39, 76, 0.1);
+}
+
+.inputGrupo select {
+    appearance: none;
+    -webkit-appearance: none;
+    color: #555;
+}
+
+.inputGrupo textarea {
+    resize: vertical;
+    min-height: 50px;
+}
+
+.submitBotao{
+    background-color: #1351d8;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    margin-top: 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 10px 40px;
-    border-bottom: 1px solid #ddd;
 }
 
-header img {
-    height: 50px;
+.submitBotao:hover{
+    background-color: #00274C;
+    color: white;
+    transform: translate(-2px);
 }
 
-header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 30px;
-}
-
-header nav a {
-    text-decoration: none;
-    color: #1351d8;
-    font-weight: bold;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-header nav a:hover{
-    color: #003478
-}
-
-footer{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #1b3571;
-    color: #fff;
-    padding: 10px 40px;
-}
-
-.redesSociais{
-    display: flex;
-    gap: 15px;
-}
-
-.redesSociais p{
-    margin: 5px 0;
-}
-
-.redesSociais img,
-.logo_footer img{
-    height: 30px;
-    transition: transform 0.3s ease;
-}
-
-.redesSociais img:hover{
-    transform: scale(1.1);
-}
-
-.copyright p {
-    margin: 0;
-    font-size: 14px;
-    text-align: center;
+@media (max-width: 768px){
+    .contatoPagina{
+        flex-direction: column;
+        gap:20px;
+    }
+    .formularioContainer{
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
 }
